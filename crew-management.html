@@ -143,7 +143,7 @@
                 </tr>
                 <tr>
                     <td><strong>Account Name:</strong></td>
-                    <td id="contact-name"></td>
+                    <td id="contact-name">-</td>
                     <td><strong>Mobile:</strong></td>
                     <td>1234567890</td>
                 </tr>
@@ -203,37 +203,37 @@
             <table>
                 <tr>
                     <td><strong>Role (Designation):</strong></td>
-                    <td>Prop Master</td>
+                    <td id="engagement-role"></td>
                     <td><strong>Engagement Tax Status:</strong></td>
                     <td>N/A</td>
                 </tr>
                 <tr>
                     <td><strong>Role (Character Name):</strong></td>
-                    <td>Prop Master</td>
+                    <td>-</td>
                     <td><strong>Travelling to UK:</strong></td>
                     <td>-</td>
                 </tr>
                 <tr>
                     <td><strong>Billing Credit Capacity:</strong></td>
-                    <td>Prop Master</td>
+                    <td>-</td>
                     <td><strong>Contract Effective Date:</strong></td>
-                    <td>18/06/2022</td>
+                    <td id="contract-date"></td>
                 </tr>
                 <tr>
                     <td><strong>Department:</strong></td>
-                    <td>Design</td>
+                    <td id="department"></td>
                     <td><strong>Working Day Length:</strong></td>
                     <td>8 hours</td>
                 </tr>
                 <tr>
                     <td><strong>Start Date:</strong></td>
-                    <td>19/06/2022</td>
+                    <td id="start-date"></td>
                     <td><strong>BFI Practitioner Type:</strong></td>
                     <td>Crew</td>
                 </tr>
                 <tr>
                     <td><strong>End Date:</strong></td>
-                    <td>28/07/2022</td>
+                    <td id="end-date"></td>
                     <td><strong>BFI Qualifying Production Crew:</strong></td>
                     <td>-</td>
                 </tr>
@@ -245,7 +245,7 @@
 		<table style="margin-left: 25px; margin-right: 25px;">
             <tr>
                 <td><strong>Phase Participation Name:</strong></td>
-                <td>PP-000140</td>
+                <td id="phase-name"></td>
             </tr>
             <tr>
                 <td><strong>Production Phase:</strong></td>
@@ -253,11 +253,11 @@
             </tr>
             <tr>
                 <td><strong>Start Date:</strong></td>
-                <td>19/06/2022</td>
+                <td id="phase-start-date"></td>
             </tr>
             <tr>
                 <td><strong>End Date:</strong></td>
-                <td>28/07/2022</td>
+                <td id="phase-end-date"></td>
             </tr>
         </table>
     </div>
@@ -419,6 +419,26 @@ function showEngagementDetails(name, role) {
     document.getElementById('crew-table').style.display = 'none';
     document.getElementById('engagement-details').style.display = 'block';
     document.getElementById('engagement-name').innerText = name;
+
+    if (name === 'John Smith') {
+        document.getElementById('engagement-role').innerText = 'Gaffer';
+        document.getElementById('contract-date').innerText = '18/06/2022';
+        document.getElementById('department').innerText = 'Electrical & Lighting';
+        document.getElementById('start-date').innerText = '19/06/2022';
+        document.getElementById('end-date').innerText = '28/07/2022';
+        document.getElementById('phase-name').innerText = 'PP-000140';
+        document.getElementById('phase-start-date').innerText = '19/06/2022';
+        document.getElementById('phase-end-date').innerText = '28/07/2022';
+    } else if (name === 'Jimmy James') {
+        document.getElementById('engagement-role').innerText = 'Spot Boy';
+        document.getElementById('contract-date').innerText = '17/06/2022';
+        document.getElementById('department').innerText = 'Production Management';
+        document.getElementById('start-date').innerText = '20/06/2022';
+        document.getElementById('end-date').innerText = '29/07/2022';
+        document.getElementById('phase-name').innerText = 'PP-000141';
+        document.getElementById('phase-start-date').innerText = '20/06/2022';
+        document.getElementById('phase-end-date').innerText = '29/07/2022';
+    }
 }
 
 // Function to go back to the main table
@@ -427,8 +447,6 @@ function goBackToTable() {
     document.getElementById('engagement-details').style.display = 'none';
     document.getElementById('crew-table').style.display = 'block';
 }
-
-    </script>
-
+</script>
 </body>
 </html>
